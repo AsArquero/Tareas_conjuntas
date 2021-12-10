@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Trabajo-Final</title>
+    <title>Index</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sticky-footer-navbar/">
 
@@ -54,7 +54,7 @@
             <a class="nav-link" href="#">Trabajo Final</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Metodología.html</a>
+            <a class="nav-link disabled">Práctica 5</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -71,7 +71,7 @@
   <div class="container">
 
 
-<h1 id="trabajo-final"><u>Trabajo-Final</u></h1>
+<h1 id="trabajo-final"><u>Index</u></h1>
 
 
 
@@ -208,6 +208,7 @@
 <h2 id="memoria">Memoria</h2>
 <h3 id="proceso-de-selección-y-limpieza-de-datos">Proceso de selección y limpieza de datos</h3>
 <p>Para seleccionar la información de este trabajo acudí al portal “datos.gob.es” que es la plataforma en la que se organiza y categoriza el Catálogo Nacional de Datos Abiertos. En este trabajo decidí centrarme en la contaminación acústica dentro de la ciudad de Madrid y, finalmente, usando para acotar el periodo en el que quiero centrarme, busqué específicamente los niveles de contaminación acústica en la ciudad durante el primer año de la pandemia de COVID-19 (2020). El enlace del conjunto de datos que escogí finalmente es <a href="https://datos.gob.es/es/catalogo/l01280796-covid-19-contaminacion-acustica-datos-diarios-con-actualizacion-semanal">este</a>.</p>
+
 <p>Mi objetivo es comparar los niveles de contaminación acústica en la ciudad en dos días distintos (el 18 de marzo y el 18 de abril) y, por ende, escogí el archivo “.csv” de los datos diarios de contaminación acústica recogidos por las 30 estaciones de Red Fija de Vigilancia de la Contaminación Acústica (una serie de estaciones repartidas por la ciudad que se encargan de captar información relativa a la condición acústica de su entorno). Una vez descargado el archivo, usé Openrefine para limpiar los datos y quedarme solo con los del 18 de marzo, en un primer archivo, y los del 18 de abril, en otro. Para ambos casos usé la siguiente configuración inicial:</p>
 <figure>
 <img src="imagenes/imagen-1-practica-4.png" alt="Imagen 1" width="1200" /><figcaption aria-hidden="true">Imagen 1</figcaption>
@@ -322,6 +323,39 @@
 <img src="https://user-images.githubusercontent.com/90325763/144118379-2c2ce963-9fe3-42ec-b6cc-cb4251496776.png" alt="4JxLz-relaci-n-entre-la-renta-media-por-hogar-y-la-poblaci-n-migrante-en-los-barrios-de-madrid" /><figcaption aria-hidden="true"></figcaption>
 </figure>
 <p>DESCRIPCIÓN: Como se observa en la gráfica, la relación entre ambas variables es clara. Los barrios con una menor renta son, a su vez, los barrios con un mayor porcentaje de población extranjera. Y viceversa.</p>
+  
+<p><a id="org34e3957"></a></p>
+<h1 id="Metodología"><u>Metodología</u></h1>
+<p>PASO 1. Utilizando el comando cp hemos creado nuevos archivos Index con título “pie” y “cabecera”.</p>
+<ul>
+<li>Comandos empleados: “cp index.html pie.html” y “cp index.html cabecera.html”.</li>
+</ul>
+<p>PASO 2: Para la elaboración del cuerpo, sin embargo, lo que hemos hecho es convertir nuestras prácticas markdown en prácticas con lenguaje html. Para ello hemos utilizado el comando “pandoc.exe”.</p>
+<ul>
+<li>Ejemplo: pandoc.exe ../ejercicios/Practica-1-Comentario.md -o Practica-1-Comentario.html</li>
+</ul>
+<p>PASO 3. Los archivos html resultantes los hemos renombrado como …-base con “mv”.</p>
+<ul>
+<li>Ejemplo: mv Practica-1-Comentario.html Practica-1-Comentario-base.html.</li>
+</ul>
+<p>PASO 4. La unión de todos los archivos del cuerpo se ha conseguido mediante el comando “cat”. Los hemos juntado unificando las 8 prácticas (las 4 de Miguel Ángel y las 4 de Adrián) en un solo archivo. Miguel Ángel se ha encargado de hacer el comando cat desde su ordenador utilizando los archivos que Adrián había subido a GitHub. Para ello empleó “git clone” y, de este modo, descargó los archivos html de las prácticas de Adrián en su propio pc (los movió a su repositorio para tenerlos todos juntos en una misma carpeta). Al disponer de los 8 archivos necesarios ya solo había que concatenarlos.</p>
+<ul>
+<li>Comando utilizado para la concatenación: “cat cabecera.html Practica-1-Comentario-base.html Practica-2-Comentario-base.html Practica-3-visualizacion-base.html Practica-4-historia-periodismo-datos-base.html Practica_1_Adri-base.html Practica_2_Adri-base.html Practica_3_Adri-base.html Practica_4_Adri-base.html pie.html&gt; Trabajo-final.html”.</li>
+</ul>
+<p>PASO 5. ¡Eureka! El comando “cat” funcionó. El trabajo, no obstante, aún no ha terminado. Después de realizar la concatenación descubrimos que había un importante número de errores que debíamos corregir (imágenes demasiado grandes o que no se veían, textos fuera de lugar, escasa diferenciación entre prácticas…).</p>
+Desde nano empezamos a corregir los fallos en el archivo concatenado. 
+<p>- “Lang”: de “en” a “es” para cambiar el idioma a español.</p> 
+<p>- En “title” pusimos “Trabajo Final”.</p>
+<p>- En “navbar-brand” hemos cambiado “Fixed-navbar” por nuestros nombres.</p>
+<p>- En “nav-link active” hemos cambiado “home” por “Periodismo de Datos”.</p> 
+<p>- En “nav-link” hemos cambiado “link” por “Trabajo Final”.</p>
+<p>- En “nav-link disabled” hemos cambiado “disabled” por “Metodología.html”.</p>
+<p>- Hemos creado un índice siguiendo la estructura del encontrado en index.html. También hemos cambiado los títulos de las prácticas para que quedara todo mucho más claro. </p> 
+<p>- Hemos resaltado los títulos sybrayándolos con el comando”<u> </u>“. Ejemplo:”<u>Práctica 1 - Miguel</u>"
+</h1></p>
+<p>- Hemos eliminado algunas frases que no cuadraban en el conjunto de la página y hemos corregido algunas palabras sueltas. Justo a la derecha de la primera imagen de Miguel y de la primera imagen de Adrián, por ejemplo, nos aparecía una línea descolgada. Esto se debía a que faltaba añadir "p"al inicio de la sentencia.</p>
+<p>- Las imágenes de las prácticas de Miguel las hemos hecho más pequeñas añadiendo con nano width=“1200” a sus respectivas líneas.</p>
+<p>PASO 6: Añadir las metodologías. El archivo que ahora estamos escribiendo lo hemos pasado a html utilizando el comando “pandoc.exe” y lo hemos concatenado al resto del trabajo. Los comandos empleados han sido los descritos en los pasos 2, 3 y 4 de esta metodología.</p>
   </div>
 </main>
 
